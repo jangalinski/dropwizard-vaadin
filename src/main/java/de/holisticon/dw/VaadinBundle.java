@@ -16,22 +16,20 @@ public class VaadinBundle implements Bundle {
 
     private final SessionHandler sessionHandler;
 
-
     public VaadinBundle(Class<? extends Servlet> servlet, String pathSpec) {
         this.sessionHandler = new SessionHandler();
         servlets.put(pathSpec, servlet);
     }
 
-    @Override
     public void initialize(Bootstrap<?> bootstrap) {
         bootstrap.addBundle(new AssetsBundle("/VAADIN", "/VAADIN", null, "vaadin"));
     }
 
-    @Override
     public void run(Environment environment) {
         environment.servlets().setSessionHandler(sessionHandler);
         for (Map.Entry<String, Class<? extends Servlet>> servlet : servlets.entrySet()) {
             environment.getApplicationContext().addServlet(servlet.getValue(), servlet.getKey());
         }
     }
+
 }
