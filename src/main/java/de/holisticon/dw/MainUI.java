@@ -15,20 +15,21 @@ public class MainUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+
         final VerticalLayout layout = new VerticalLayout();
         layout.setHeight(100f,Unit.PERCENTAGE);
         setContent(layout);
 
         Button button = new Button("click!", new Button.ClickListener() {
-            @Override
             public void buttonClick(Button.ClickEvent clickEvent) {
-                int count = (int) Objects.firstNonNull(getSession().getAttribute("count"), 0);
+                int count = (Integer) Objects.firstNonNull(getSession().getAttribute("count"), 0);
                 getSession().setAttribute("count", ++count);
-
                 layout.addComponent(new Label("clicked: " + count ));
             }
         });
 
         layout.addComponent(button);
+
     }
+
 }
