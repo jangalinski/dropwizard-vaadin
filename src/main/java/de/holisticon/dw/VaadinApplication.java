@@ -3,11 +3,8 @@ package de.holisticon.dw;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinServlet;
 import io.dropwizard.Application;
-import io.dropwizard.Bundle;
-import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import org.eclipse.jetty.server.session.SessionHandler;
 
 public class VaadinApplication extends Application<VaadinApplication.Configuration> {
 

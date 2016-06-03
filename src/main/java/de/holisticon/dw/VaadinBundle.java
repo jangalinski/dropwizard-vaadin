@@ -8,8 +8,6 @@ import io.dropwizard.setup.Environment;
 import org.eclipse.jetty.server.session.SessionHandler;
 
 import javax.servlet.Servlet;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class VaadinBundle implements Bundle {
