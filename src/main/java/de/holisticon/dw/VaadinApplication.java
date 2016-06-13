@@ -15,7 +15,7 @@ public class VaadinApplication extends Application<VaadinApplication.Configurati
 
     @Override
     public void initialize(Bootstrap<Configuration> bootstrap) {
-        bootstrap.addBundle(new VaadinBundle(Servlet.class, "/foo/*"));
+        bootstrap.addBundle(new VaadinBundle(Servlet.class, "/ui/*"));
     }
 
     public static class Configuration extends io.dropwizard.Configuration {
@@ -30,4 +30,5 @@ public class VaadinApplication extends Application<VaadinApplication.Configurati
     public static void main(String... args) throws Exception {
         new VaadinApplication().run(args);
     }
+
 }
